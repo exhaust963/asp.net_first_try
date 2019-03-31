@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/Menu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css">
+    
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body style="padding-top:0px;">
+            <left>                  
+                    @*<div class="kullanici" style="height:15%;width:45%;display:none;" id="kullanıcı"></div>*@
+                    <div class="sidebar left " style="padding-top:0px; padding-bottom:0px; height:759px;margin-left:-20%;"id="navbar">
+                        <div class="w3-teal" id="button">
+                            <button class="w3-button w3-teal w3-xlarge"  id="button" style="background-color:darkseagreen;position:fixed;margin-left:20%;width:40px;height:40px;" onclick="w3_open()">☰</button>
+                        </div>       
+                        <div class="w3-sidebar w3-bar-block w3-border-right"  style="display:none;" id="mySidebar">
+                            <button class="w3-button w3-teal w3-xlarge" style="background-color:darkseagreen;position:fixed;margin-left:220px;width:40px;height:40px;" onclick="w3_close()">☰</button>
+                            <img src="https://i.pinimg.com/736x/22/43/c1/2243c135e65d3229a9cbd7e0340d15f5--draw-joker-joker-skull.jpg " style="width:100px;margin-left:65px;margin-top:15px;" />
+                         <label style="color:white;margin-left:45px;margin-top:15px;">Hoş geldin @Session["Kullanici"]</label>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                           
+                        <ul class="list-sidebar bg-defoult">
+                            <li class="sub-menu">
+                                <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> &nbsp;&nbsp;&nbsp;<i class="fa fa-th-large"></i> &nbsp;<span class="nav-label">Faaliyet Takip </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+
+                            </li>  
+                            <ul class="sub-menu collapse" id="dashboard">
+                                <li class="active" style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Faaliyet Ekle", "Create", "Faaliyets")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Faaliyet Listele", "Index", "Faaliyets")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Faaliyet Türü", "Index", "Faaliyet_türü")</li>
+                            </ul>                         
+                            <li class="sub-menu">
+                                <a href="#" data-toggle="collapse" data-target="#dashboard3" class="collapsed active"> &nbsp;&nbsp;&nbsp;<i class="fa fa-th-large"></i> &nbsp;<span class="nav-label">Yönetim Paneli </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                              
+                            </li>
+                            <ul class="sub-menu collapse" id="dashboard3">
+                                <li class="active" style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Kurum Listesi", "Error", "Hata")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Menüler", "Error", "Hata")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Yetkinlendirme İşlemleri", "Error", "Hata")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Kontrol Noktası", "Error", "Hata")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Kullanıcı Listesi", "Index", "logs")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Duyurular", "Error", "Hata")</li>
+                                <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Versiyon", "Error", "Hata")</li>
+
+                            </ul>
+                            <li class="sub-menu">
+                                <a href="#" data-toggle="collapse" data-target="#dashboard4" class="collapsed active"> &nbsp;&nbsp;&nbsp;<i class="fa fa-th-large"></i> &nbsp;<span class="nav-label">Sistem Tanımları </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                                <ul class="sub-menu collapse" id="dashboard4">
+                                    <li class="active" style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Kurum Listesi", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Menüler", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Yetkinlendirme İşlemleri", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Kontrol Noktası", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Kullanıcı Listesi", "Index", "logs")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Duyurular", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Versiyon", "Error", "Hata")</li>
+
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="#" data-toggle="collapse" data-target="#dashboard2" class="collapsed active">&nbsp;&nbsp; <i class="fa fa-th-large"></i> &nbsp;<span class="nav-label"> Rehber </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                                <ul class="sub-menu collapse" id="dashboard2">
+                                    <li class="active" style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Kişi Listesi", "Index", "logs")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Firma Listesi", "Error", "Hata")</li>
+                                </ul>
+                            </li>
+
+                            <li class="sub-menu">
+                                <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active"> &nbsp;&nbsp;&nbsp;<i class="fa fa-th-large"></i> &nbsp;<span class="nav-label">Raporlar</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+                                <ul class="sub-menu collapse" id="products">
+                                    <li class="active" style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Düzenleyici Faaliyet İsteği", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Problem İç", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Faaliyet Aşama", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Ortalama Gün", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Dış Problem", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Analiz Tipleri", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Test Tipleri", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Talep", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Talep/Proje", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Geliştirme Performans", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Derece Performans", "Error", "Hata")</li>
+                                </ul>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active">&nbsp;&nbsp;&nbsp;<i class="fa fa-th-large"></i>&nbsp; <span class="nav-label">Toplantı</></span><span class="fa fa-chevron-left pull-right"></span></a>
+                                <ul class="sub-menu collapse" id="tables">
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Toplantı Kayıt", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Toplantı Sorgula", "Error", "Hata")</li>
+                                    <li style="padding-left:40px;border-left:solid #19aa8d;">@Html.ActionLink("Toplantı Gündemi Havuz", "Error", "Hata")</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>                                                           
+                    </div>
+</left>
+            <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+            <script src="~/Scripts/menu.js"></script>
+            <div id="main" style="margin-top:-780px;background-color:#f3f3f5;height:100%;">
+                @RenderBody()
+            </div>
+    <script>
+@*function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+} *@
+    function w3_open() {
+        document.getElementById("main").style.marginLeft = "15%";
+       document.getElementById("button").style.marginLeft = "-38.9%";
+        document.getElementById("navbar").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.width = "215px";
+    document.getElementById("mySidebar").style.display = "block";
+    
+}
+function w3_close() {
+    document.getElementById("main").style.marginLeft = "0%";
+    document.getElementById("button").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("navbar").style.marginLeft = "-20%";
+
+}
+
+    </script>
+</body>
+</html>

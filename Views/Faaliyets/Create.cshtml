@@ -1,0 +1,126 @@
+﻿@model staj2.data.Faaliyet
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="exit" style="text-align:right;padding-right:40px;padding-top:20px;color:gray;padding-bottom:3px;">
+        <br />
+        <h6><i class="fa fa-envelope"></i>&emsp;&emsp;<i class="fa fa-sign-out"></i>&emsp;<a href="http://localhost:53838/" style="color:gray;font-size:14px;">Çıkış</a></h6>
+    </div>
+    <div class="yazi">
+        <div class="baslangic" style="width:100%;height:90px;margin-top:10px;padding-left:25px;background-color:white;padding-top:3px;">
+            <h2 style="font-size:23px;font-family:Arial, Helvetica, sans-serif;">Faaliyet Kayıt İşlemleri</h2>
+            <h5 style="font-size:13px;"><a href="http://localhost:53838/Main/Anasayfa" style="color:gray;font-size:13px;">Anasayfa</a>&emsp;/&emsp;<a href="http://localhost:53838/Faaliyets/Index" style="color:gray;font-size:13px;">Faaliyet Bilgileri</a>&emsp;/&emsp;<strong>Kayıt</strong></h5>
+        </div>
+    </div>
+    <br />
+    <div class="Faaliyet-Bilgi" style="background-color:white;width:99%;height:650px;padding-top:10px;margin-left:10px;">
+        <h6 style="font-size:15px;color:gray;padding-left:15px;"><strong>Faaliyet Bilgileri </strong><small>Lütfen bilgileri eksiksiz giriniz</small></h6>
+        <hr />  
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Faaliyet Türü</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Faaliyet_tür, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Faaliyet_tür, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Konu</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Konu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Konu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Faaliyet Sahibi</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Faaliyet_sahibi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Faaliyet_sahibi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Faaliyet Atayan</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Faaliyet_atayan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Faaliyet_atayan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Oluşturma Tarihi</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Oluşturma_tarih, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Oluşturma_tarih, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Proje</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Proje, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Proje, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Önem Derecesi</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Önem_derecesi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Önem_derecesi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Açıklama</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Açıklama, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Açıklama, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">İlgili Kurum</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.İlgili_kurum, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.İlgili_kurum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Öngörülen Başlama Tarihi</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Öngörülen_başlama, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Öngörülen_başlama, "", new { @class = "text-danger" })
+            </div>
+        </div>
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <label class="col-md-2">Öngörülen Bitiş Tarihi</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Öngörülen_bitiş, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Öngörülen_bitiş, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+          <div class="form-group"style="margin-top:25px;">
+            <br />
+            <div class="col-md-offset-2 col-md-10">
+                <br />
+                <input type="submit" value="✓ Kayit" class="btn btn-default" style="background-color:steelblue;color:white;" /><div style="width:80px;display:inline;margin-right:15px;">
+    <button type="button" style="background-color:green;height:35px;border-radius:5px;color:white;border-color:green;" onclick="location.href='@Url.Action("Index","Faaliyets")'">← Geri</button>
+</div>
+            </div>
+        </div>
+    </div>
+}
+<div style="margin-left:-220px;margin-top:-70px;background-color:white;"></div>

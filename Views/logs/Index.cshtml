@@ -1,0 +1,106 @@
+﻿@model IEnumerable<staj2.data.log>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="exit" style="text-align:right;padding-right:40px;padding-top:20px;color:gray;padding-bottom:3px;">
+    <br />
+    <h6><i class="fa fa-envelope"></i>&emsp;&emsp;<i class="fa fa-sign-out"></i>&emsp;<a href="http://localhost:53838/" style="color:gray;font-size:14px;">Çıkış</a></h6>
+</div>
+<div class="yazi">
+    <div class="baslangic" style="width:100%;height:90px;margin-top:10px;padding-left:25px;background-color:white;padding-top:3px;">
+        <h2 style="font-size:23px;font-family:Arial, Helvetica, sans-serif;">Kullanıcı Kayıt İşlemleri</h2>
+        <h5 style="font-size:13px;"><a href="http://localhost:53838/Main/Anasayfa" style="color:gray;font-size:13px;">Anasayfa</a>&emsp;/&emsp;<strong>Kullanıcılar</strong></h5>
+    </div>
+</div>
+<br />
+<div style="background-color:white;margin-left:10px;">
+    <span style="margin-left:10px;color:gray;"> Kullanıcı Listesi</span>
+    <hr />
+    <form action="/logs/Index" method="post" />
+    @using (Html.BeginForm("Index", "logs", FormMethod.Get))
+    {
+        <label>TC Kimlik No</label>
+        <input type="text" name="sorgu1" />
+        <label style="display:inline;margin-left:57%;">Kullanıcı Tipi</label>
+        <input type="text" name="sorgu2" />
+        <br />
+        <label style="margin-left:5.3%;">Ad</label>
+        <input type="text" name="sorgu3" />
+        <div style="margin-left:85%;width:80px;display:inline;margin-right:15px;">
+            <button type="button" style="background-color:steelblue;height:35px;border-radius:5px;color:white;border-color:steelblue;" onclick="location.href='@Url.Action("Create","logs")'">+ Yeni Kayıt</button>
+        </div>
+        <div style="background-color:green;width:80px;display:inline;">
+            <input class="btn btn-primary btn-xl" type="submit" value="? Sorgu" style="background-color:green;" />
+        </div>
+    }
+    <br /><br />
+
+    <table class="table">
+        <tr>
+            <th style="width:5%;">
+                No
+            </th>
+            <th style="width:10%;">
+                Kullanıcı Adı
+            </th>
+            <th style="width:1%;">
+                Ad
+            </th>
+            <th width="40%;">
+                Soyad
+            </th>
+            <th style="width:10%;">
+                Tc Kimlik No
+            </th>
+            <th style="width:10%;">
+                Kullanıcı Tipi
+            </th>
+            <th style="width:5%;">
+                Telefon
+            </th>
+
+            <th style="width:5px;"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kuladi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kultip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    <div style="background-color:green;width:55px;display:inline">@Html.ActionLink("Düzenle", "Edit", new { id = item.id }, new { style = "color:white;", })</div>  <strong>/</strong> <div style="background-color:red;width:55px;display:inline">@Html.ActionLink("Sil", "Delete", new { id = item.id }, new { style = "color:white;" })</div>
+
+                </td>
+            </tr>
+        }
+    </table>
+    <br /><br />
+
+    <footer style="margin-left:50px;position:absolute;">
+        <span style="background-color:#fff;border-width:0px;font-size:14px; color:gray;padding-top:9px;margin-bottom:0px;margin-top:13px;position:fixed;display:inline">
+            <strong>Copyright </strong>ARD Grup © 2014-2015
+        </span><span style="display:inline;background-color:#fff;margin-left:1100px;border-width:0px;font-size:14px; color:gray;padding-top:9px;margin-bottom:0px;margin-top:13px;position:fixed;">www.<strong>ardgrup</strong>.com</span>
+    </footer>
+</div>

@@ -1,0 +1,123 @@
+﻿@model staj2.data.Faaliyet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="exit" style="text-align:right;padding-right:40px;padding-top:20px;color:gray;padding-bottom:3px;">
+    <br />
+    <h6><i class="fa fa-envelope"></i>&emsp;&emsp;<i class="fa fa-sign-out"></i>&emsp;<a href="http://localhost:53838/" style="color:gray;font-size:14px;">Çıkış</a></h6>
+</div>
+<div class="yazi">
+    <div class="baslangic" style="width:100%;height:90px;margin-top:10px;padding-left:25px;background-color:white;padding-top:3px;">
+        <h2 style="font-size:23px;font-family:Arial, Helvetica, sans-serif;">Faaliyet İşlemleri</h2>
+        <h5 style="font-size:13px;"><a href="http://localhost:53838/Main/Anasayfa" style="color:gray;font-size:13px;">Anasayfa</a>&emsp;/&emsp;<a href="http://localhost:53838/Faaliyets/Index" style="color:gray;font-size:13px;">Faaliyet Listesi</a>&emsp;/&emsp;<strong>Düzenleme</strong></h5>
+    </div>
+</div>
+<br />
+<h3>Faaliyeti Silmek İstediğinize Emin Misiniz?</h3>
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            Faaliyet Türü
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faaliyet_tür)
+        </dd>
+        <dt>
+            Konu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Konu)
+        </dd>
+
+        <dt>
+            Faaliyet Sahibi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faaliyet_sahibi)
+        </dd>
+
+        <dt>
+            Faaliyet Atayan
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faaliyet_atayan)
+        </dd>
+
+        <dt>
+            Oluşturma Tarih
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oluşturma_tarih)
+        </dd>
+
+        <dt>
+            Proje
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proje)
+        </dd>
+
+        <dt>
+            Önem Derecesi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Önem_derecesi)
+        </dd>
+
+        <dt>
+            Açıklama
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Açıklama)
+        </dd>
+
+        <dt>
+            İlgili Kurum
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İlgili_kurum)
+        </dd>
+        <dt>
+            Öngörülen Başlama
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Öngörülen_başlama)
+        </dd>
+
+        <dt>
+            Öngörülen Bitiş
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Öngörülen_bitiş)
+        </dd>
+
+
+    </dl>
+    
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" style="margin-left:10%;color:white;background-color:red;" />
+            <div style="width:80px;display:inline;margin-right:15px;">
+                <button type="button" style="background-color:green;height:35px;border-radius:5px;color:white;border-color:green;" onclick="location.href='@Url.Action("Index","Faaliyets")'">← Listeye Dön</button>
+            </div>
+        </div>
+    }
+</div>

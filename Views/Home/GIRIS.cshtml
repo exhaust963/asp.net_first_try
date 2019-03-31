@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "GIRIS";
+    Layout = null;
+}
+<link href="~/css/Login.css" rel="stylesheet" />
+<head>
+    <title> ARD CRM|Ard CRM Sistemine Giriş</title>
+</head>
+<body>
+    <center>
+
+        <div class="giris">
+            <br />
+            <img src="http://crm.ardsistem.com.tr/img/login/ardgrup-login.png">
+            <h4><strong>ARDCRM' e Hoşgeldiniz.</strong></h4>
+            <h5>Sisteme giriş yapmak için daha önce size verilmiş olan kullanıcı adınızı ve şifrenizi kullanabilirsiniz.</h5>
+
+            <form action="/Home/GIRIS" method="post" />
+            <div class="buttonlar">
+                <form accept-charset="UTF-8" role="form">
+
+                    <input class="form-control" placeholder="Kullanıcı Adı" name="isim" type="text">
+                    <br />
+                    <br />
+                    <input class="form-control" placeholder="Şifre" name="sifre" type="password">
+                    <br />
+                    <br />
+                    <input class="btn-block" type="submit" value="Giriş">
+
+                </form>
+            </div>
+            <br />
+            <br />
+            <p>ARD CRM v20150808 © 2015</p>
+            <br />
+            <br />
+
+        </div>
+
+    </center>
+
+
+</body>

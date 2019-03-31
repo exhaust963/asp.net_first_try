@@ -1,0 +1,185 @@
+﻿@model staj2.data.log
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="exit" style="text-align:right;padding-right:40px;padding-top:20px;color:gray;padding-bottom:3px;">
+    <br />
+    <h6><i class="fa fa-envelope"></i>&emsp;&emsp;<i class="fa fa-sign-out"></i>&emsp;<a href="http://localhost:53838/" style="color:gray;font-size:14px;">Çıkış</a></h6>
+</div>
+<div class="yazi">
+    <div class="baslangic" style="width:100%;height:90px;margin-top:10px;padding-left:25px;background-color:white;padding-top:3px;">
+        <h2 style="font-size:23px;font-family:Arial, Helvetica, sans-serif;">Faaliyet İşlemleri</h2>
+        <h5 style="font-size:13px;"><a href="http://localhost:53838/Main/Anasayfa" style="color:gray;font-size:13px;">Anasayfa</a>&emsp;/&emsp;<a href="http://localhost:53838/logs/Index" style="color:gray;font-size:13px;">Faaliyet Listesi</a>&emsp;/&emsp;<strong>Düzenleme</strong></h5>
+    </div>
+</div>
+<br />
+<h3>Kullanıcıyı Silmek İstediğinize Emin Misiniz?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+           Tc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tc)
+        </dd>
+
+        <dt>
+           Ad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+
+        <dt>
+            Soyad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+
+        <dt>
+            Kullanıcı Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kuladi)
+        </dd>
+
+        <dt>
+            E-posta
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+
+        <dt>
+            Telefon
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            Acil Telefon
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciltel)
+        </dd>
+
+        <dt>
+            Cinsiyet
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cinsiyet)
+        </dd>
+
+        <dt>
+           Doğum
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doğum)
+        </dd>
+
+        <dt>
+            Medeni
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medeni)
+        </dd>
+
+        <dt>
+            Kullanıcı Tipi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kultip)
+        </dd>
+
+        <dt>
+            Kullanıcı İl
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kulil)
+        </dd>
+
+        <dt>
+            Kullanıcı İlçe
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kulilçe)
+        </dd>
+
+        <dt>
+            Adres
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+           İban
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İban)
+        </dd>
+
+        <dt>
+           İşe Başlama Tarihi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Başlama)
+        </dd>
+
+        <dt>
+            İşten Ayrılma
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ayrılma)
+        </dd>
+
+        <dt>
+           Mezun Olduğu Okul
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Okul)
+        </dd>
+
+        <dt>
+            Mezun Olduğu Bölüm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bölüm)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" style="margin-left:10%;background-color:red;color:white;" /> 
+            <div style="width:80px;display:inline;margin-right:15px;">
+                <button type="button" style="background-color:green;height:35px;border-radius:5px;color:white;border-color:green;" onclick="location.href='@Url.Action("Index","Faaliyets")'">← Listeye Dön</button>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,107 @@
+﻿@model staj2.data.Faaliyet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Faaliyet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Faaliyet_tür)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faaliyet_tür)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Konu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Konu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Faaliyet_sahibi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faaliyet_sahibi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Faaliyet_atayan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faaliyet_atayan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oluşturma_tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oluşturma_tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Önem_derecesi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Önem_derecesi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Açıklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Açıklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Öngörülen_başlama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Öngörülen_başlama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Öngörülen_bitiş)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Öngörülen_bitiş)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.İlgili_kurum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İlgili_kurum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Faaliyet_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

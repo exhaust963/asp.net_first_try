@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="loginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Faaliyet">
+          <Key>
+            <PropertyRef Name="Faaliyet_id" />
+          </Key>
+          <Property Name="Faaliyet_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Faaliyet_tür" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Konu" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Faaliyet_sahibi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Faaliyet_atayan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oluşturma_tarih" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Proje" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Önem_derecesi" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Açıklama" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="İlgili_kurum" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Öngörülen_başlama" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Öngörülen_bitiş" Type="nvarchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faaliyet_türü">
+          <Key>
+            <PropertyRef Name="Faaliyet_id" />
+          </Key>
+          <Property Name="Faaliyet_id" Type="int" Nullable="false" />
+          <Property Name="Faaliyet_tür" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kuladi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Aciltel" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="Cinsiyet" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Doğum" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Medeni" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="Kultip" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Kulil" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kulilçe" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="İban" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Başlama" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Ayrılma" Type="nvarchar" MaxLength="8" />
+          <Property Name="Okul" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Bölüm" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Resim" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="loginModelStoreContainer">
+          <EntitySet Name="Faaliyet" EntityType="Self.Faaliyet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faaliyet_türü" EntityType="Self.Faaliyet_türü" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="log" EntityType="Self.log" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="loginModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Faaliyet">
+          <Key>
+            <PropertyRef Name="Faaliyet_id" />
+          </Key>
+          <Property Name="Faaliyet_id" Type="Int32" Nullable="false" />
+          <Property Name="Faaliyet_tür" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Konu" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Faaliyet_sahibi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Faaliyet_atayan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Oluşturma_tarih" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Proje" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Önem_derecesi" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Açıklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Öngörülen_başlama" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Öngörülen_bitiş" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="İlgili_kurum" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kuladi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aciltel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Doğum" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Medeni" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kultip" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kulil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kulilçe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="İban" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Başlama" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ayrılma" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="Okul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Bölüm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Resim" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="loginEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Faaliyet" EntityType="Self.Faaliyet" />
+          <EntitySet Name="log" EntityType="Self.log" />
+          <EntitySet Name="Faaliyet_türü" EntityType="loginModel.Faaliyet_türü" />
+        </EntityContainer>
+        <EntityType Name="Faaliyet_türü">
+          <Key>
+            <PropertyRef Name="Faaliyet_id" />
+          </Key>
+          <Property Name="Faaliyet_id" Type="Int32" Nullable="false" />
+          <Property Name="Faaliyet_tür" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="loginModelStoreContainer" CdmEntityContainer="loginEntities1">
+          <EntitySetMapping Name="Faaliyet">
+            <EntityTypeMapping TypeName="loginModel.Faaliyet">
+              <MappingFragment StoreEntitySet="Faaliyet">
+                <ScalarProperty Name="İlgili_kurum" ColumnName="İlgili_kurum" />
+                <ScalarProperty Name="Öngörülen_bitiş" ColumnName="Öngörülen_bitiş" />
+                <ScalarProperty Name="Öngörülen_başlama" ColumnName="Öngörülen_başlama" />
+                <ScalarProperty Name="Açıklama" ColumnName="Açıklama" />
+                <ScalarProperty Name="Önem_derecesi" ColumnName="Önem_derecesi" />
+                <ScalarProperty Name="Proje" ColumnName="Proje" />
+                <ScalarProperty Name="Oluşturma_tarih" ColumnName="Oluşturma_tarih" />
+                <ScalarProperty Name="Faaliyet_atayan" ColumnName="Faaliyet_atayan" />
+                <ScalarProperty Name="Faaliyet_sahibi" ColumnName="Faaliyet_sahibi" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Faaliyet_id" ColumnName="Faaliyet_id" />
+                <ScalarProperty Name="Faaliyet_tür" ColumnName="Faaliyet_tür" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="log">
+            <EntityTypeMapping TypeName="loginModel.log">
+              <MappingFragment StoreEntitySet="log">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Tc" ColumnName="Tc" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Kuladi" ColumnName="Kuladi" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Aciltel" ColumnName="Aciltel" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="Doğum" ColumnName="Doğum" />
+                <ScalarProperty Name="Medeni" ColumnName="Medeni" />
+                <ScalarProperty Name="Kultip" ColumnName="Kultip" />
+                <ScalarProperty Name="Kulil" ColumnName="Kulil" />
+                <ScalarProperty Name="Kulilçe" ColumnName="Kulilçe" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="İban" ColumnName="İban" />
+                <ScalarProperty Name="Başlama" ColumnName="Başlama" />
+                <ScalarProperty Name="Ayrılma" ColumnName="Ayrılma" />
+                <ScalarProperty Name="Okul" ColumnName="Okul" />
+                <ScalarProperty Name="Bölüm" ColumnName="Bölüm" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faaliyet_türü">
+            <EntityTypeMapping TypeName="loginModel.Faaliyet_türü">
+              <MappingFragment StoreEntitySet="Faaliyet_türü">
+                <ScalarProperty Name="Faaliyet_tür" ColumnName="Faaliyet_tür" />
+                <ScalarProperty Name="Faaliyet_id" ColumnName="Faaliyet_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

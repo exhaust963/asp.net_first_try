@@ -1,0 +1,51 @@
+﻿@model staj2.data.Faaliyet_türü
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="exit" style="text-align:right;padding-right:40px;padding-top:20px;color:gray;padding-bottom:3px;">
+    <br />
+    <h6><i class="fa fa-envelope"></i>&emsp;&emsp;<i class="fa fa-sign-out"></i>&emsp;<a href="http://localhost:53838/" style="color:gray;font-size:14px;">Çıkış</a></h6>
+</div>
+<div class="yazi">
+    <div class="baslangic" style="width:100%;height:90px;margin-top:10px;padding-left:25px;background-color:white;padding-top:3px;">
+        <h2 style="font-size:23px;font-family:Arial, Helvetica, sans-serif;">Faaliyet İşlemleri</h2>
+        <h5 style="font-size:13px;"><a href="http://localhost:53838/Main/Anasayfa" style="color:gray;font-size:13px;">Anasayfa</a>&emsp;/&emsp;<a href="http://localhost:53838/Faaliyet_türü/Index" style="color:gray;font-size:13px;">Faaliyet Türleri Listesi</a>&emsp;/&emsp;<strong>Düzenleme</strong></h5>
+    </div>
+</div>
+<br />
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()   
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="col-md-2">Faaliyet No</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Faaliyet_id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Faaliyet_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2">Faaliyet Türü</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Faaliyet_tür, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Faaliyet_tür, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style="display:inline;">
+                <input type="submit" value="Oluştur" style="background-color:steelblue;color:white;" class="btn btn-default" />
+                <div style="width:80px;display:inline;margin-right:15px;">
+                    <button type="button" style="background-color:green;height:35px;border-radius:5px;color:white;border-color:green;" onclick="location.href='@Url.Action("Index","Faaliyet_türü")'">← Listeye Dön</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+}
+
